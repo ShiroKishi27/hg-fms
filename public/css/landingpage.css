@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: #dfdada;
+  color: #222121;
+}
+
+section {
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Center content vertically */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem; /* Consistent spacing */
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  background: linear-gradient(to bottom, #0e2148, #111);
+  padding: 5rem 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #0ef;
+  font-weight: 700;
+}
+
+.hero-content p {
+  margin: 1rem auto;
+  color: #dfdada;
+  max-width: 600px;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-inline: 1rem;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(#081b29, rgb(4, 113, 121), #00e9e9);
+  color: #dfdada;
+}
+
+.btn-secondary {
+  border: 3px solid #0ef;
+  background: transparent;
+  color: #dfdada;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0.98rem rgb(9, 188, 201);
+  color: #000;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(
+    rgba(8, 27, 41, 0.3),
+    rgba(4, 116, 124, 0.3),
+    rgba(0, 233, 233, 0.3)
+  );
+}
+
+/* Value Section */
+.value-section {
+  background: #111;
+  color: #dfdada;
+  text-align: center;
+}
+
+.value-title,
+.sub-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0ef;
+  margin-bottom: 1rem;
+}
+
+.value-desc {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+/* How It Works - Steps */
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1000px;
+  align-items: stretch; /* makes all cards stretch */
+}
+
+/* Equal height cards */
+.step-card {
+  min-height: 320px; /* consistent height to avoid shift */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.15)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 20px rgba(0, 214, 252, 0.3);
+}
+
+/* Stable icon sizing (prevents CLS) */
+.step-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  margin: 0 auto 0.75rem auto;
+  border-radius: 50%;
+  background: rgba(0, 239, 255, 0.1);
+  color: #0ef;
+  flex-shrink: 0;
+}
+
+.step-icon ion-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: block;
+  margin: auto;
+  align-items: center; /* centers vertically */
+  justify-content: center; /* centers horizontally */
+}
+
+/* Headings inside cards */
+.step-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem; /* consistent spacing */
+  color: rgb(24, 186, 197);
+}
+
+/* Paragraph text */
+.step-card p {
+  margin: 0;
+  flex-grow: 1; /* fills remaining space evenly */
+  color: #dfdada;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* Grid on larger screens */
+@media (min-width: 720px) {
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Industries */
+.industries-benefit {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.industry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 600px;
+  text-align: left;
+}
+
+.industry-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  color: #dfdada;
+}
+
+.industry-list ion-icon {
+  font-size: 1.3rem;
+  color: #0ef;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.site-footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: #0e2148;
+  color: #ccc;
+}

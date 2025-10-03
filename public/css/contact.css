@@ -1,0 +1,237 @@
+::selection {
+  background: #dfdada;
+  color: #222121;
+}
+
+.contact-title {
+  font-size: 2.3rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0ef;
+  margin: 2rem auto 1rem auto;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.contact-form,
+.contact-socials {
+  position: relative;
+  outline: none;
+  padding: 1.5em;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form,
+.contact-socials {
+  max-width: 22rem;
+}
+
+.contact-container {
+  font-size: 16px;
+  padding: 5rem 1.5rem;
+}
+
+.contact-socials p {
+  margin-block: 1rem;
+  color: #dfdada;
+}
+
+.contact-socials ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-socials li {
+  margin: 0.5em 0;
+}
+
+.contact-socials a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-socials a ion-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #0ef;
+}
+
+.contact-socials a:hover {
+  color: #0ef;
+}
+
+@media (min-width: 980px) {
+  .contact-section {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.contact-socials h2,
+.contact-form h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02rem;
+  color: rgb(24, 186, 197);
+  text-align: center;
+}
+
+.contact-form .contact-input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 25px 0;
+}
+
+.contact-input-box input {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #0ef;
+  outline: none;
+  border-bottom: 2px solid #fff;
+  padding: 0 22px 0 5px;
+  transition: 0.5s;
+}
+
+.contact-input-box textarea {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #0ef;
+  outline: none;
+  border-bottom: 2px solid #fff;
+  padding: 5px 22px 5px 5px;
+  transition: 0.5s;
+  resize: none;
+}
+
+.contact-input-box textarea:focus,
+.contact-input-box textarea:valid {
+  border-bottom: 2px solid #0ef;
+}
+
+.contact-input-box.textarea-box {
+  height: auto;
+  margin: 25px 0;
+}
+
+.contact-input-box textarea:focus ~ label,
+.contact-input-box textarea:valid ~ label {
+  font-size: 12px;
+  top: -5px;
+  color: #0ef;
+}
+
+.contact-input-box input:focus,
+.contact-input-box input:valid {
+  border-bottom: 2px solid #0ef;
+}
+
+.contact-input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.contact-input-box input:focus ~ label,
+.contact-input-box input:valid ~ label {
+  font-size: 12px;
+  top: -5px;
+  color: #0ef;
+}
+
+.contact-input-box span {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 18x;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.contact-input-box input:focus ~ span,
+.contact-input-box input:valid ~ span {
+  color: #0ef;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #0ef;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(#081b29, #0ef, #fff);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  top: 0;
+}
+
+@media (max-width: 420px) {
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-socials h2,
+  .contact-form h2 {
+    font-size: 1.2rem;
+  }
+
+  p,
+  a,
+  .contact-input-box label {
+    font-size: 0.95rem;
+  }
+}

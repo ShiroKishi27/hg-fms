@@ -355,3 +355,57 @@ body {
   text-align: left;
   color: #fff;
 }
+
+@media (max-width: 560px) {
+  .wrapper .bg-animate,
+  .info-text,
+  .wrapper .bg-animate1 {
+    display: none;
+  }
+
+  .wrapper .form-box {
+    width: 100%;
+  }
+
+  .remember-forgot label {
+    font-size: 0.8rem;
+  }
+
+  .wrapper {
+    max-width: 420px;
+    transition: height 0.5s ease;
+  }
+
+  .wrapper.active {
+    height: 550px;
+  }
+
+  .bg-animate,
+  .bg-animate1 {
+    z-index: 1;
+  }
+
+  .info-text {
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .form-box {
+    z-index: 3;
+  }
+
+  /* Disable clickability for the hidden form */
+  .form-box.login {
+    pointer-events: auto;
+  }
+  .wrapper.active .form-box.login {
+    pointer-events: none;
+  }
+
+  .form-box.register {
+    pointer-events: none;
+  }
+  .wrapper.active .form-box.register {
+    pointer-events: auto;
+  }
+}

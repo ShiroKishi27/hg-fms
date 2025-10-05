@@ -75,17 +75,51 @@
       <button class="mobile-menu">&#9776;</button>
     </header>
     <div class="overlay"></div>
-    <div class="maincontent">
+    <section class="maincontent">
       <div class="btn-main-container">
-        <button class="btn-main">Rain & Flood Forecast</button>
-        <button class="btn-main">Evacuation Routes</button>
-        <button class="btn-main">Affected Households</button>
+        <button class="btn-main active" data-target="flood-container">
+          <ion-icon name="rainy-outline"></ion-icon>
+          <span>Rain & Flood</span>
+        </button>
+        <button class="btn-main" data-target="routes-container">
+          <ion-icon name="map-outline"></ion-icon>
+          <span>Routes</span>
+        </button>
+        <button class="btn-main" data-target="household-container">
+          <ion-icon name="home-outline"></ion-icon>
+          <span>Households</span>
+        </button>
       </div>
+
+      <!-- Flood & Rainfall Monitoring -->
+      <div class="flood-container active">
+        <div class="map-container">
+          <div class="search-bar">
+            <input
+              id="search-flood"
+              type="text"
+              class="input-search-bar"
+              placeholder="Search flood zones"
+            />
+            <button class="btn-search">🔎︎</button>
+          </div>
+          <div class="flood-data">
+            <h3>Rainfall and Water Level Data</h3>
+            <p>Display charts, real-time rainfall map, or sensor data here.</p>
+          </div>
+        </div>
+        <div class="map-routes">
+          <h3>Alerts & Updates</h3>
+          <p>Show list of rainfall alerts or flood warnings here.</p>
+        </div>
+      </div>
+
+      <!-- Evacuation Routes -->
       <div class="routes-container">
         <div class="map-container">
           <div class="search-bar">
             <input
-              id="search"
+              id="search-route"
               type="text"
               class="input-search-bar"
               placeholder="Search location"
@@ -96,7 +130,7 @@
         <div class="map-routes">
           <div class="search-bar">
             <input
-              id="search"
+              id="search-routes"
               type="text"
               class="input-search-bar"
               placeholder="Search routes"
@@ -105,7 +139,23 @@
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- Affected Households -->
+      <div class="household-container">
+        <div class="map-container">
+          <h3>List of Affected</h3>
+          <ul class="household-list">
+            <li>Barangay 1 - 12 households affected</li>
+            <li>Barangay 2 - 8 households affected</li>
+            <li>Barangay 3 - 5 households affected</li>
+          </ul>
+        </div>
+        <div class="map-routes">
+          <h3>Response Actions</h3>
+          <p>Rescue status, supply distribution, or assistance updates here.</p>
+        </div>
+      </div>
+    </section>
 
     <script type="text/javascript">
       const subMenu = document.getElementById("subMenu");
@@ -114,6 +164,9 @@
       const overlay = document.querySelector(".overlay");
       const logoprof = document.querySelector(".profile-inline");
       const buttons = document.querySelectorAll(".btn-main");
+      const sections = document.querySelectorAll(
+        ".flood-container, .routes-container, .household-container"
+      );
 
       mobileMenu.addEventListener("click", () => {
         navList.classList.toggle("active");
@@ -140,8 +193,14 @@
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          buttons.forEach((b) => b.classList.remove("active")); // remove old active
-          btn.classList.add("active"); // set new active
+          // remove active state
+          buttons.forEach((b) => b.classList.remove("active"));
+          sections.forEach((s) => s.classList.remove("active"));
+
+          // activate clicked button + target section
+          btn.classList.add("active");
+          const target = document.querySelector(`.${btn.dataset.target}`);
+          target.classList.add("active");
         });
       });
     </script>
